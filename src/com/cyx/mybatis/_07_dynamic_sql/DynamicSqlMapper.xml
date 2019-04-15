@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cyx.mybatis._07_dynamic_sql.DynamicSqlMapper">
+
+    <resultMap id="productMap" type="product">
+        <id column="id" property="id" />
+        <result column="product_type_id" property="productTypeId" />
+        <result column="name" property="name" />
+        <result column="brand" property="brand" />
+        <result column="purchasing_price" property="purchasingPrice" />
+        <result column="original_price" property="originalPrice" />
+        <result column="current_price" property="currentPrice" />
+    </resultMap>
+
+    <!-- 这里有个问题，如果使用 where 1 = 1 的话，那么就不能使用索引了 -->
+    <select id="getProductListUseIf" resultMap="productMap">
+        SELECT id, product_type_id, name, brand, purchasing_price, original_price, current_price
+        FROM product
+        WHERE 1 = 1
+        <if test="name != null and name != ''">
+            AND name LIKE CONCAT('%', #{name}, '%')
+        </if>
+        <if test="brand != null and brand != ''">
+            AND brand LIKE CONCAT('%', #{brand}, '%')
+        </if>
+    </select>
+
+    <!-- choose 动态 sql 元素有点像 Java 中的 switch 语句 -->
+    <select id="getProductListUseChoose" resultMap="productMap">
+        SELECT id, product_type_id, name, brand, purchasing_price, original_price, current_price
+        FROM product
+        WHERE 1 = 1
+        <choose>
+            <when test="name != null and name != ''">
+                AND name LIKE CONCAT('%', #{name}, '%')
+            </when>
+            <when test="brand != null and brand != ''">
+                AND brand LIKE CONCAT('%', #{brand}, '%')
+            </when>
+            <otherwise>
+                AND name IS NOT NULL AND brand IS NOT NULL
+            </otherwise>
+        </choose>
+    </select>
+
+    <select id="getProductListUseWhere" resultMap="productMap">
+        SELECT id, product_type_id, name, brand, purchasing_price, original_price, current_price
+        FROM product
+        <where>
+            <if test="name != null and name != ''">
+                name LIKE CONCAT('%', #{name}, '%')
+            </if>
+            <if test="brand != null and brand != ''">
+                AND brand LIKE CONCAT('%', #{brand}, '%')
+            </if>
+        </where>
+    </select>
+
+    <update id="updateProductUseSet">
+        UPDATE product
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="brand != null and brand != ''">
+                brand = #{brand},
+            </if>
+            <if test="productTypeId != null">
+                product_type_id = #{productTypeId}
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <select id="getProductListUseTrim" resultMap="productMap">
+        SELECT id, product_type_id, name, brand, purchasing_price, original_price, current_price
+        FROM product
+        <trim prefix="WHERE " prefixOverrides="AND | OR">
+            <if test="name != null and name != ''">
+                AND name LIKE CONCAT('%', #{name}, '%')
+            </if>
+            <if test="brand != null and brand != ''">
+                AND brand LIKE CONCAT('%', #{brand}, '%')
+            </if>
+        </trim>
+    </select>
+
+    <update id="updateProductUseTrim">
+        UPDATE product
+        <trim prefix="SET " suffixOverrides=",">
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="brand != null and brand != ''">
+                brand = #{brand},
+            </if>
+            <if test="productTypeId != null">
+                product_type_id = #{productTypeId}
+            </if>
+        </trim>
+        WHERE id = #{id}
+    </update>
+
+</mapper>

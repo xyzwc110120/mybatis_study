@@ -1,0 +1,3 @@
+16:36:50.286 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: UPDATE product SET name = ?, brand = ? WHERE id = ? 
+16:36:50.318 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: 超级游艇(String), 冲的飞快(String), 2(Long)
+16:36:50.336 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==    Updates: 1

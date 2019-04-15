@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/Resource/Java_jar/MyBatis/mybatis-3-mybatis-3.5.0.zip!/mybatis-3-mybatis-3.5.0/.mvn/wrapper" />
+      <root url="jar://D:/Resource/Java_jar/MyBatis/mybatis-3-mybatis-3.5.0.zip!/mybatis-3-mybatis-3.5.0/src/main/java" />
+      <root url="jar://D:/Resource/Java_jar/MyBatis/mybatis-3-mybatis-3.5.0.zip!/mybatis-3-mybatis-3.5.0/src/test/java" />
+      <root url="file://D:/Resource/Java_jar/Apache/Log4j 2/apache-log4j-2.11.2-src/log4j-api/src/main/java" />
+      <root url="file://D:/Resource/Java_jar/Apache/Log4j 2/apache-log4j-2.11.2-src/log4j-core/src/main/java" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
+  </library>
+</component>

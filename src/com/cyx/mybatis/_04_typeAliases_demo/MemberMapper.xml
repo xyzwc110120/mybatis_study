@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cyx.mybatis._04_typeAliases_demo.MemberMapper">
+
+    <!--
+        结果映射（将结果映射成某一类型的对象）：
+            resultMap 元素：
+                id 属性：当前命名空间中的一个唯一标识，用于标识一个结果映射。
+                type 属性：需要将结果映射为对象的类型的全限定名或别名。
+
+                子元素：
+                    id 元素：作用与 result 元素一样。但是，id 元素表示的结果（如主键）将是对象的标识属性，这会在比较对象实例时用到。
+                            这样可以提高整体的性能，尤其是进行缓存和嵌套结果映射（也就是连接映射）的时候。
+                    result 元素：将一个列的值映射到一个简单数据类型的属性或字段
+    -->
+    <resultMap id="memberMap" type="member">
+        <id column="id" property="id" />
+        <result column="account" property="account" />
+        <result column="password" property="password" />
+        <result column="balance" property="balance" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+
+    <!-- 查询指定 id 的 member 信息 -->
+    <select id="getMemberById" parameterType="long" resultType="member">
+        SELECT id, account, password, balance, create_time createTime FROM member m WHERE m.id = #{id}
+    </select>
+
+    <!-- 查询所有 member 信息 -->
+    <select id="getMemberList" resultMap="memberMap">
+        SELECT id, account, password, balance, create_time FROM member
+    </select>
+
+    <!-- 修改指定 id 的 member 信息 -->
+    <update id="updateMemberById">
+        UPDATE member
+        SET account = #{account}, password = #{password}, balance = #{balance}, create_time = NOW()
+        WHERE id = #{id}
+    </update>
+
+</mapper>

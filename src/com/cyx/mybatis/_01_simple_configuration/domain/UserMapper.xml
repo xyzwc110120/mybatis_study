@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- MyBatis 映射文件约束文件 -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+    根元素 mapper:
+        namespace 属性：命名空间，Mapper 文件的唯一标识（不同的 Mapper 文件的 namespace 是不一样的）。
+-->
+<mapper namespace="com.cyx.mybatis._01_simple_configuration.domain.UserMapper">
+
+    <!--
+        select 元素：专门用来做查询的 SQL：
+            id 元素：唯一标识，用来表示某一条 SQL 语句，与 mapper 元素中的 namespace 属性一起组成更长的完全限定名来将不同的语句隔离开来
+                    （因为不同 Mapper 映射文件中可能会存在相同 id）。
+            parameterType 元素：表示执行该 SQL 语句需要的参数的类型，建议不写，MaBatis 可以自行判断出来。
+            resultType 元素：把结果集中的每一行数据封装成什么类型的数据。
+    -->
+    <select id="getUserById" parameterType="Long" resultType="user">
+        SELECT u.id, u.account, u.password FROM user u WHERE u.id = #{id}
+    </select>
+
+
+    <!-- 获取所有 user 信息 -->
+    <!-- 如果返回的是集合，那 resultType 属性应该设置为集合包含的类型，而不是集合本身 -->
+    <select id="getUserList" resultType="user">
+        SELECT u.id, u.account, u.password FROM user u
+    </select>
+
+
+    <!-- 修改指定 id 的 user 信息 -->
+    <update id="updateUserById" parameterType="com.cyx.mybatis._01_simple_configuration.domain.User">
+        UPDATE user u SET u.account = #{account}, u.password = #{password} WHERE u.id = #{id}
+    </update>
+
+
+    <!-- 删除指定 id 的 user -->
+    <delete id="deleteUserById" parameterType="Long">
+        DELETE FROM user WHERE id = #{id}
+    </delete>
+
+
+    <!-- 插入一条 user 信息，并获取自动生成的主键 -->
+    <!--
+        useGeneratedKeys 属性：
+            （仅对 insert 和 update 有用）令 MyBatis 使用 JDBC 的 getGeneratedKeys 方法来取出由数据库内部生成的主键；
+        keyProperty 属性：
+            （仅对 insert 和 update 有用）唯一标记一个属性，MyBatis 会通过 getGeneratedKeys 的返回值设置它的键值。
+            简单说来就是将获取到的主键的值存入哪个属性中。
+    -->
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id"
+            parameterType="com.cyx.mybatis._01_simple_configuration.domain.User">
+        INSERT INTO user (account, password) VALUES (#{account}, #{password})
+    </insert>
+
+</mapper>
