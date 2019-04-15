@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b543f1e-fa22-42a8-b9dc-5d0c90096101" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-    </list>
+    <list default="true" id="2b543f1e-fa22-42a8-b9dc-5d0c90096101" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -191,60 +189,7 @@
             <path>
               <item name="mybatis_study" type="b2602c69:ProjectViewProjectNode" />
               <item name="mybatis_study" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mybatis_study" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mybatis_study" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mybatis_study" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mybatis_study" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mybatis_study" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mybatis_study" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="cyx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mybatis_study" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mybatis_study" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="cyx" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mybatis_study" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mybatis_study" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="cyx" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-              <item name="_03_mybatis_util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mybatis_study" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mybatis_study" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="cyx" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-              <item name="_07_dynamic_sql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mybatis_study" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mybatis_study" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="cyx" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mybatis_study" type="b2602c69:ProjectViewProjectNode" />
@@ -450,7 +395,7 @@
       <workItem from="1554962506235" duration="12171000" />
       <workItem from="1554993476144" duration="1942000" />
       <workItem from="1555310529900" duration="5950000" />
-      <workItem from="1555341092235" duration="1684000" />
+      <workItem from="1555341092235" duration="1692000" />
     </task>
     <servers />
   </component>
@@ -487,13 +432,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67438000" />
+    <option name="totallyTimeSpent" value="67446000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18336888" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18336888" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
