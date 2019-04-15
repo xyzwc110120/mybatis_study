@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Configuration 标签的重要属性：
+        status：表示控制台应该打印的状态日志等级。可选的值按顺序从小到大有：All < Trace < Debug < Info < Warn < Error < Fatal < OFF
+        name：配置的名称；
+        monitorInterval：自动重加载的时间间隔，单位是秒（s），最短5秒；
+        dest：状态日志输出目的地，值为 err、a file path、URL 三者之一。如果为“err”，信息会被输出到 stderr。
+-->
+<Configuration status="error">
+
+    <!-- 根节点 Configuration 有两个子节点：Appenders 和 Loggers（表明可以定义多个 Appender 和 Logger） -->
+
+
+    <!-- Appenders 节点，常见的有三种子节点：Console、RollingFile、File -->
+    <Appenders>
+
+        <!--
+            Console节点用来定义输出到控制台的 Appender：
+                name：指定 Appender 的名字（该属性会被 Loggers 元素的子元素 Root 和 Logger 的子元素 AppenderRef 引用）；
+                target：SYSTEM_OUT 或 SYSTEM_ERR，一般只设置默认：SYSTEM_OUT；
+                PatternLayout：输出格式，不设置默认为：%m%n。
+        -->
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+        </Console>
+
+        <!--
+            File 节点用来定义输出到指定位置的文件的 Appender：
+                name：指定Appender的名字；
+                append：这个 log 每次运行程序是否会自动清空，由 append 属性决定；
+                fileName：指定输出日志的目的文件带全路径的文件名；
+                PatternLayout：输出格式，不设置默认为:%m%n。
+        -->
+        <File name="file" fileName="src/com/cyx/mybatis/_02_logging_framework/test.log" append="false">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
+        </File>
+    </Appenders>
+
+
+
+    <!-- Loggers 节点，常见的有两种子节点：Root 和 Logger -->
+    <Loggers>
+
+        <!--
+            Root 节点用来指定项目的根日志，如果没有单独指定 Logger，那么就会默认使用该 Root 日志输出：
+                level：日志输出级别；
+                AppenderRef：用来指定该日志输出到哪个 Appender。
+        -->
+        <Root level="info">
+            <AppenderRef ref="console" />
+            <AppenderRef ref="file" />
+        </Root>
+
+        <!--
+            Logger 节点用来单独指定日志的形式，比如要为指定包下的 class 指定不同的日志级别等：
+                level：日志输出级别；
+                name：用来指定该 Logger 所使用的类或者类所在的包全路径，继承自Root节点；
+                AppenderRef：Logger的子节点，用来指定该日志输出到哪个 Appender，如果没有指定，就会默认继承自Root。
+                            如果指定了， 那么会在指定的这个Appender和Root的Appender中都会输出，
+                            此时我们可以设置 Logger 的 additivity="false" 只在自定义的 Appender 中进行输出。
+        -->
+        <Logger name="com.cyx.mybatis._01_simple_configuration" level="trace" additivity="false">
+            <AppenderRef ref="console" />
+        </Logger>
+        <Logger name="com.cyx.mybatis._02_logging_framework" level="debug" />
+        <Logger name="com.cyx.mybatis._05_parameter" level="debug" />
+        <Logger name="com.cyx.mybatis._07_dynamic_sql" level="debug" />
+    </Loggers>
+
+</Configuration>
