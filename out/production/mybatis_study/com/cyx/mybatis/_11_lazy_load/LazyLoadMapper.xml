@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cyx.mybatis._11_lazy_load.LazyLoadMapper">
+
+    <resultMap id="departmentMap" type="department">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+
+        <collection property="employeeList" ofType="employee" column="id" select="getEmployeeListByDepartment">
+        </collection>
+    </resultMap>
+
+
+    <select id="getEmployeeListByDepartment" resultType="employee">
+        SELECT id, department_id departmentId, name FROM employee WHERE department_id = #{id}
+    </select>
+
+    <select id="getDepartmentList" resultMap="departmentMap">
+        SELECT id, name FROM department
+    </select>
+
+</mapper>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cyx.mybatis._09_many2one.Many2OneMapper">
+
+    <resultMap id="productMap1" type="product">
+        <id column="id" property="id" />
+        <!-- 使用通常的点式分隔形式进行复杂属性导航 -->
+        <result column="product_type_id" property="productType.id" />
+        <result column="name" property="name" />
+        <result column="brand" property="brand" />
+        <result column="purchasing_price" property="purchasingPrice" />
+        <result column="original_price" property="originalPrice" />
+        <result column="current_price" property="currentPrice" />
+    </resultMap>
+
+    <select id="getProductById1" resultMap="productMap1">
+        SELECT id, product_type_id, name, brand, purchasing_price, original_price, current_price
+        FROM product
+        WHERE id = #{id}
+    </select>
+
+
+    <!--
+        关联（association）元素：
+            一个复杂类型的关联；许多结果将包装成这种类型.
+
+            property 属性：映射到列结果的字段或属性。
+            javaType 属性：一个 Java 类的完全限定名，或一个类型别名。如果你映射到一个 JavaBean，MyBatis 通常可以推断类型。
+                            然而，如果你映射到的是 HashMap，那么你应该明确地指定 javaType 来保证行为与期望的相一致。
+
+            关联的嵌套 Select 查询：
+                column 属性：数据库中的列名，或者是列的别名。 注意：在使用复合主键的时候，
+                            你可以使用 column="{prop1=col1,prop2=col2}" 这样的语法来指定多个传递给嵌套 Select 查询语句的列名。
+                            这会使得 prop1 和 prop2 作为参数对象，被设置为对应嵌套 Select 语句的参数。
+                select 属性：用于加载复杂类型属性的映射语句的 ID，它会从 column 属性指定的列中检索数据，作为参数传递给目标 select 语句。
+
+            关联的嵌套结果映射：
+                resultMap 属性：结果映射的 ID，可以将此关联的嵌套结果集映射到一个合适的对象树中。
+                columnPrefix 属性：当连接多个表时，你可能会不得不使用列别名来避免在 ResultSet 中产生重复的列名。
+                                指定 columnPrefix 列名前缀允许你将带有这些前缀的列映射到一个外部的结果映射中。
+    -->
+
+    <!-- 关联的嵌套 Select 查询 -->
+    <resultMap id="productMap2" type="product">
+        <id column="id" property="id" />
+        <result column="product_type_id" property="productTypeId" />
+        <result column="name" property="name" />
+        <result column="brand" property="brand" />
+        <result column="purchasing_price" property="purchasingPrice" />
+        <result column="original_price" property="originalPrice" />
+        <result column="current_price" property="currentPrice" />
+
+        <association property="productType" javaType="productType" column="product_type_id"
+                     select="com.cyx.mybatis._09_many2one.Many2OneMapper.getProductTypeById"  />
+    </resultMap>
+
+
+    <select id="getProductTypeById" resultType="productType">
+        SELECT id, name FROM product_type WHERE id = #{id}
+    </select>
+    
+    <select id="getProductById2" resultMap="productMap2">
+        SELECT id, product_type_id, name, brand, purchasing_price, original_price, current_price FROM product
+        WHERE id = #{id}
+    </select>
+
+    <select id="getProductList1" resultMap="productMap2">
+        SELECT id, product_type_id, name, brand, purchasing_price, original_price, current_price FROM product
+    </select>
+
+
+    <!-- 关联的嵌套结果映射 -->
+    <resultMap id="productMap3" type="product">
+        <id column="id" property="id" />
+        <result column="product_type_id" property="productTypeId" />
+        <result column="name" property="name" />
+        <result column="brand" property="brand" />
+        <result column="purchasing_price" property="purchasingPrice" />
+        <result column="original_price" property="originalPrice" />
+        <result column="current_price" property="currentPrice" />
+
+        <association property="productType" javaType="productType">
+            <id column="pt_id" property="id" />
+            <result column="pt_name" property="name" />
+        </association>
+    </resultMap>
+
+    <select id="getProductList2" resultMap="productMap3">
+        SELECT p.id, p.product_type_id, p.name, p.brand, p.purchasing_price, p.original_price, p.current_price,
+               pt.id pt_id, pt.name pt_name
+        FROM product p LEFT JOIN product_type pt ON p.product_type_id = pt.id
+    </select>
+
+
+    <!-- 关联的嵌套结果映射，使用 columnPrefix 属性 -->
+    <resultMap id="productMap4" type="product">
+        <id column="id" property="id" />
+        <result column="product_type_id" property="productTypeId" />
+        <result column="name" property="name" />
+        <result column="brand" property="brand" />
+        <result column="purchasing_price" property="purchasingPrice" />
+        <result column="original_price" property="originalPrice" />
+        <result column="current_price" property="currentPrice" />
+
+        <association property="productType" javaType="productType" columnPrefix="pt_">
+            <id column="id" property="id" />
+            <result column="name" property="name" />
+        </association>
+    </resultMap>
+
+    <select id="getProductList3" resultMap="productMap4">
+        SELECT p.id, p.product_type_id, p.name, p.brand, p.purchasing_price, p.original_price, p.current_price,
+               pt.id pt_id, pt.name pt_name
+        FROM product p LEFT JOIN product_type pt ON p.product_type_id = pt.id
+    </select>
+
+
+    <!-- 关联的嵌套结果映射，使用 resultMap 属性 -->
+    <resultMap id="productTypeMap1" type="productType">
+        <id column="pt_id" property="id" />
+        <result column="pt_name" property="name" />
+    </resultMap>
+
+    <resultMap id="productMap5" type="product">
+        <id column="id" property="id" />
+        <result column="product_type_id" property="productTypeId" />
+        <result column="name" property="name" />
+        <result column="brand" property="brand" />
+        <result column="purchasing_price" property="purchasingPrice" />
+        <result column="original_price" property="originalPrice" />
+        <result column="current_price" property="currentPrice" />
+
+        <association property="productType" javaType="productType" resultMap="productTypeMap1" />
+    </resultMap>
+
+    <select id="getProductList4" resultMap="productMap5">
+        SELECT p.id, p.product_type_id, p.name, p.brand, p.purchasing_price, p.original_price, p.current_price,
+               pt.id pt_id, pt.name pt_name
+        FROM product p LEFT JOIN product_type pt ON p.product_type_id = pt.id
+    </select>
+
+
+    <!--  关联的嵌套结果映射，使用 resultMap 属性  -->
+    <resultMap id="productTypeMap2" type="productType">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+    </resultMap>
+
+    <resultMap id="productMap6" type="product">
+        <id column="id" property="id" />
+        <result column="product_type_id" property="productTypeId" />
+        <result column="name" property="name" />
+        <result column="brand" property="brand" />
+        <result column="purchasing_price" property="purchasingPrice" />
+        <result column="original_price" property="originalPrice" />
+        <result column="current_price" property="currentPrice" />
+
+        <association property="productType" javaType="productType" resultMap="productTypeMap2" columnPrefix="pt_" />
+    </resultMap>
+
+    <select id="getProductList5" resultMap="productMap6">
+        SELECT p.id, p.product_type_id, p.name, p.brand, p.purchasing_price, p.original_price, p.current_price,
+               pt.id pt_id, pt.name pt_name
+        FROM product p LEFT JOIN product_type pt ON p.product_type_id = pt.id
+    </select>
+    
+</mapper>

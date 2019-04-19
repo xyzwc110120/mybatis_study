@@ -2,44 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b543f1e-fa22-42a8-b9dc-5d0c90096101" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_08_advanced_query/AdvancedQueryMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_08_advanced_query/AdvancedQueryMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_08_advanced_query/AdvancedQueryMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_08_advanced_query/PageResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_08_advanced_query/ProductQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_09_many2one/Many2OneMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_09_many2one/Many2OneMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_09_many2one/Many2OneMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_10_one2many/One2ManyMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_10_one2many/One2ManyMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_10_one2many/One2ManyMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_11_lazy_load/LazyLoadMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_11_lazy_load/LazyLoadMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_11_lazy_load/LazyLoadMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_12_level1_cache/Level1CacheMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_12_level1_cache/Level1CacheMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_12_level1_cache/Level1CacheMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/domain/Department.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/domain/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/domain/ProductType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7d8ed7cf-9130-4592-8499-dac440555ee7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7d8ed7cf-9130-4592-8499-dac440555ee7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mybatis_study/com/cyx/mybatis/_02_logging_framework/test.log" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mybatis_study/com/cyx/mybatis/_02_logging_framework/test.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mybatis_study/com/cyx/mybatis/_07_dynamic_sql/DynamicSqlMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mybatis_study/com/cyx/mybatis/_07_dynamic_sql/DynamicSqlMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mybatis_study/com/cyx/mybatis/_07_dynamic_sql/DynamicSqlMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mybatis_study/com/cyx/mybatis/_07_dynamic_sql/DynamicSqlMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mybatis_study/com/cyx/mybatis/_07_dynamic_sql/DynamicSqlMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mybatis_study/com/cyx/mybatis/_07_dynamic_sql/DynamicSqlMapperTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mybatis_study/com/cyx/mybatis/domain/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mybatis_study/com/cyx/mybatis/domain/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mybatis_study/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mybatis_study/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mybatis_study/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mybatis_study/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cyx/mybatis/_02_logging_framework/test.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_02_logging_framework/test.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cyx/mybatis/_07_dynamic_sql/DynamicSqlMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_07_dynamic_sql/DynamicSqlMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cyx/mybatis/_07_dynamic_sql/DynamicSqlMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_07_dynamic_sql/DynamicSqlMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cyx/mybatis/_07_dynamic_sql/DynamicSqlMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_07_dynamic_sql/DynamicSqlMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cyx/mybatis/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/domain/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cyx/mybatis/domain/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/domain/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mybatis_study/com/cyx/mybatis/domain/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mybatis_study/com/cyx/mybatis/domain/Member.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -206,7 +169,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="y" value="20" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -483,8 +446,16 @@
       <workItem from="1555491937921" duration="12103000" />
       <workItem from="1555565723310" duration="8951000" />
       <workItem from="1555599946938" duration="5508000" />
-      <workItem from="1555643193583" duration="5111000" />
+      <workItem from="1555643193583" duration="5366000" />
     </task>
+    <task id="LOCAL-00001" summary="新增笔记">
+      <created>1555658988238</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555658988238</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -520,10 +491,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112069000" />
+    <option name="totallyTimeSpent" value="112324000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989154" visible="true" weight="0.19402985" />
@@ -561,6 +532,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="新增笔记" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增笔记" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_04_typeAliases_demo/MemberMapperTest.java">
