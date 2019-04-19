@@ -1,3 +1,6 @@
-16:36:50.286 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: UPDATE product SET name = ?, brand = ? WHERE id = ? 
-16:36:50.318 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: 超级游艇(String), 冲的飞快(String), 2(Long)
-16:36:50.336 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==    Updates: 1
+15:13:42.745 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: SELECT id, account, password, balance FROM member WHERE id = ? 
+15:13:42.774 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: 1(Long)
+15:13:42.796 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 1
+15:13:42.798 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: SELECT id, account, password, balance FROM member WHERE id = ? 
+15:13:42.799 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: 1(Long)
+15:13:42.800 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 1

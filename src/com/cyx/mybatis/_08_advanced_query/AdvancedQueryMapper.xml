@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cyx.mybatis._08_advanced_query.AdvancedQueryMapper">
+
+    <resultMap id="productMap" type="product">
+        <id column="id" property="id" />
+        <result column="product_type_id" property="productTypeId" />
+        <result column="name" property="name" />
+        <result column="brand" property="brand" />
+        <result column="purchasing_price" property="purchasingPrice" />
+        <result column="original_price" property="originalPrice" />
+        <result column="current_price" property="currentPrice" />
+    </resultMap>
+    
+    <!-- 公共 sql -->
+    <sql id="commonSql">
+        <where>
+            <if test="query.keyword != null">
+                <!-- bind 元素：创建一个变量并将其绑定到上下文 -->
+                <bind name="likeBind" value="'%' + query.keyword + '%'"/>
+                (name LIKE CONCAT('%', #{likeBind}, '%') OR brand LIKE CONCAT('%', #{likeBind}, '%'))
+            </if>
+            <if test="query.productTypeId != null">
+                AND product_type_id = #{query.productTypeId}
+            </if>
+            <!--
+                特殊标识符：
+                    小于（less than）：&lt;
+                    大于（greater than）：&gt;
+            -->
+            <if test="query.minCurrentPrice != null">
+                AND current_price &gt;= #{query.minCurrentPrice}
+            </if>
+            <if test="query.maxCurrentPrice != null">
+                AND current_price &lt;= #{query.maxCurrentPrice}
+            </if>
+        </where>
+    </sql>
+    
+
+    <select id="getProductList" resultMap="productMap">
+        SELECT id, product_type_id, name, brand, purchasing_price, original_price, current_price
+        FROM product
+        <include refid="commonSql" />
+        LIMIT #{index}, #{pageSize}
+    </select>
+    
+    <select id="getProductTotalCount" resultType="integer">
+        SELECT COUNT(`id`) FROM product
+        <include refid="commonSql" />
+    </select>
+
+</mapper>

@@ -66,6 +66,10 @@
         <Logger name="com.cyx.mybatis._02_logging_framework" level="debug" />
         <Logger name="com.cyx.mybatis._05_parameter" level="debug" />
         <Logger name="com.cyx.mybatis._07_dynamic_sql" level="debug" />
+        <Logger name="com.cyx.mybatis._08_advanced_query" level="debug" />
+        <Logger name="com.cyx.mybatis._09_many2one" level="debug" />
+        <Logger name="com.cyx.mybatis._11_lazy_load" level="debug" />
+        <Logger name="com.cyx.mybatis._12_level1_cache" level="debug" />
     </Loggers>
 
 </Configuration>

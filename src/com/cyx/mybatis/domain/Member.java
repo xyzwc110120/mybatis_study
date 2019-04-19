@@ -3,8 +3,7 @@ package com.cyx.mybatis.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Getter@Setter
 public class Member {
 
     private Long id;
@@ -24,7 +23,6 @@ public class Member {
     }
 
     @Override
-
     public String toString() {
         return "Member{" +
                 "id=" + id +

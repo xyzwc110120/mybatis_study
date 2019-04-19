@@ -4,6 +4,7 @@ import com.cyx.mybatis.domain.Product;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 public interface DynamicSqlMapper {
 
@@ -24,5 +25,14 @@ public interface DynamicSqlMapper {
 
     // 使用动态 SQL：trim 元素模仿 set 元素
     void updateProductUseTrim(Product product);
+
+    // 使用动态 SQL：foreach 元素
+    List<Product> getProductListUseForeach(Long... ids);
+
+    // 使用动态 SQL：foreach 元素遍历 Map 对象
+    List<Product> getProductListByMap(@Param("paramMap") Map<String, String> paramMap);
+
+    // 使用动态 SQL：foreach 元素批量插入
+    void batchInsertProduct(@Param("productList") List<Product> productList);
 
 }

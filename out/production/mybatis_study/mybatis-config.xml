@@ -17,6 +17,17 @@
     <settings>
         <!-- logImpl：指定 MyBatis 所用日志的具体实现，未指定时将自动查找。 -->
         <setting name="logImpl" value="LOG4J2"/>
+
+        <!-- 开启延迟加载（懒加载）功能-->
+        <!-- 延迟加载的全局开关。当开启时，所有关联对象都会延迟加载，默认值：false。 -->
+        <setting name="lazyLoadingEnabled" value="true" />
+        <!--
+            当开启时，任何方法的调用都会加载该对象的所有属性，否则，每个属性会按需加载（参考 lazyLoadTriggerMethods)。
+            默认值：false （在 3.4.1 及之前的版本默认值为 true）。
+        -->
+        <setting name="aggressiveLazyLoading" value="false" />
+        <!-- 指定哪个对象的方法触发一次延迟加载。（用逗号分隔的方法列表）默认触发方法有：equals,clone,hashCode,toString -->
+        <setting name="lazyLoadTriggerMethods" value="clone" />
     </settings>
 
 
@@ -63,6 +74,11 @@
         <mapper class="com.cyx.mybatis._06_annotation_development.AnnotationMemberMapper" />
 
         <mapper resource="com/cyx/mybatis/_07_dynamic_sql/DynamicSqlMapper.xml" />
+        <mapper resource="com/cyx/mybatis/_08_advanced_query/AdvancedQueryMapper.xml" />
+        <mapper resource="com/cyx/mybatis/_09_many2one/Many2OneMapper.xml" />
+        <mapper resource="com/cyx/mybatis/_10_one2many/One2ManyMapper.xml" />
+        <mapper resource="com/cyx/mybatis/_11_lazy_load/LazyLoadMapper.xml" />
+        <mapper resource="com/cyx/mybatis/_12_level1_cache/Level1CacheMapper.xml" />
     </mappers>
 
 </configuration>

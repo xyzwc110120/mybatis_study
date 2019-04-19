@@ -6,6 +6,12 @@ import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class DynamicSqlMapperTest {
 
     @Test
@@ -50,6 +56,39 @@ public class DynamicSqlMapperTest {
             session.getMapper(DynamicSqlMapper.class).updateProductUseTrim(
                     new Product(2L, null, "超级游艇", "冲的飞快", null, null, null));
             session.commit();
+        }
+    }
+
+    @Test
+    @DisplayName("使用 foreach 元素")
+    void testGetProductListUseForeach() {
+        System.out.println(MyBatisUtil.getMapper(DynamicSqlMapper.class).getProductListUseForeach(1L, 3L, 7L));
+    }
+
+    @Test
+    @DisplayName("使用 foreach 元素遍历 Map 对象")
+    void testGetProductListByMap() {
+        Map<String, String> param = new HashMap<String, String>() {
+            {
+                this.put("name", "车");
+                this.put("brand", "可以");
+            }
+        };
+
+        System.out.println(MyBatisUtil.getMapper(DynamicSqlMapper.class).getProductListByMap(param));
+    }
+
+    @Test
+    @DisplayName("使用 foreach 元素批量插入")
+    void testBatchInsertProduct() {
+        List<Product> productList = new ArrayList<>();
+        productList.add(new Product(null, 1L, "三轮车", "至尊奢华天子驾", new BigDecimal(600000), new BigDecimal(800000), new BigDecimal(50000)));
+        productList.add(new Product(null, 2L, "死飞", "可以死的更快", new BigDecimal(50000), new BigDecimal(60000), new BigDecimal(42000)));
+
+        try (SqlSession session = MyBatisUtil.getSqlSession()) {
+            session.getMapper(DynamicSqlMapper.class).batchInsertProduct(productList);
+            session.commit();
+            System.out.println(productList);
         }
     }
 }

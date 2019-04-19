@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cyx.mybatis._10_one2many.One2ManyMapper">
+
+    <resultMap id="employeeMap" type="employee">
+        <id column="id" property="id" />
+        <result column="department_id" property="departmentId" />
+        <result column="name" property="name" />
+    </resultMap>
+
+    <resultMap id="departmentMap" type="department">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+
+        <!--
+            association：一个复杂类型的关联，针对单一对象的属性；
+            collection：一个复杂类型的集合，针对集合类型的属性。
+
+            集合元素和关联元素几乎是一样的，它们相似的程度之高，以致于没有必要再介绍集合元素的相似部分，但是之间还是有几个不同：
+                ofType 属性：这个属性非常重要，它用来将 JavaBean（或字段）属性的类型和集合存储的类型区分开来。
+
+            在一般情况下，MyBatis 可以推断 javaType 属性，因此并不需要填写。
+        -->
+        <!-- <collection property="employeeList" javaType="arrayList" ofType="employee" resultMap="employeeMap" columnPrefix="e_" /> -->
+        <collection property="employeeList" ofType="employee" resultMap="employeeMap" columnPrefix="e_" />
+    </resultMap>
+
+
+    <select id="getDepartmentList" resultMap="departmentMap">
+        SELECT d.id, d.name, e.id e_id, e.department_id e_department_id, e.name e_name
+        FROM department d LEFT JOIN employee e ON e.department_id = d.id
+    </select>
+
+</mapper>

@@ -80,7 +80,7 @@
         FROM product
         <trim prefix="WHERE " prefixOverrides="AND | OR">
             <if test="name != null and name != ''">
-                AND name LIKE CONCAT('%', #{name}, '%')
+                AND `name` LIKE CONCAT('%', #{name}, '%')
             </if>
             <if test="brand != null and brand != ''">
                 AND brand LIKE CONCAT('%', #{brand}, '%')
@@ -103,5 +103,40 @@
         </trim>
         WHERE id = #{id}
     </update>
+
+    <select id="getProductListUseForeach" resultMap="productMap">
+        SELECT id, product_type_id, name, brand, purchasing_price, original_price, current_price
+        FROM product
+        <where>
+            <if test="array != null">
+                id IN
+                <foreach collection="array" item="id" open="(" separator="," close=")">
+                    #{id}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+    <select id="getProductListByMap" resultMap="productMap">
+        SELECT id, product_type_id, name, brand, purchasing_price, original_price, current_price
+        FROM product
+        <where>
+            <if test="paramMap != null">
+                <foreach collection="paramMap" index="key" item="value" separator="AND">
+                    <!-- 注意，这里遍历时，列的值要写入 SQL 中，要使用 ${}，而不能用 #{} -->
+                    ${key} LIKE CONCAT('%', #{value}, '%')
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+    <insert id="batchInsertProduct" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO product (id, product_type_id, name, brand, purchasing_price, original_price, current_price)
+        VALUES
+        <foreach collection="productList" item="product" separator=",">
+            (#{product.id}, #{product.productTypeId}, #{product.name}, #{product.brand}, #{product.purchasingPrice},
+             #{product.originalPrice}, #{product.currentPrice})
+        </foreach>
+    </insert>
 
 </mapper>

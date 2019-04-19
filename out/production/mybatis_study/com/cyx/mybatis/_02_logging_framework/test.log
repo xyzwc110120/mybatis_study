@@ -1,3 +1,6 @@
-16:32:10.328 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: SELECT id, product_type_id, name, brand, purchasing_price, original_price, current_price FROM product WHERE name LIKE CONCAT('%', ?, '%') AND brand LIKE CONCAT('%', ?, '%') 
-16:32:10.356 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: 车(String), 可以(String)
-16:32:10.379 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 2
+15:13:06.612 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: SELECT id, account, password, balance FROM member WHERE id = ? 
+15:13:06.638 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: 1(Long)
+15:13:06.659 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 1
+15:13:06.670 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==>  Preparing: SELECT id, account, password, balance FROM member WHERE id = ? 
+15:13:06.670 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - ==> Parameters: 1(Long)
+15:13:06.672 DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 159 debug - <==      Total: 1

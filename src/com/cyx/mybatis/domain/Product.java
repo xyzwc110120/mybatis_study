@@ -1,10 +1,11 @@
 package com.cyx.mybatis.domain;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 
-@Getter
+@Getter@Setter
 public class Product {
 
     private Long id;
@@ -14,6 +15,8 @@ public class Product {
     private BigDecimal purchasingPrice;
     private BigDecimal originalPrice;
     private BigDecimal currentPrice;
+
+    private ProductType productType;
 
     public Product() {
     }
