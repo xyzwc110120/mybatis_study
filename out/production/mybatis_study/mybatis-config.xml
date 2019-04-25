@@ -28,6 +28,10 @@
         <setting name="aggressiveLazyLoading" value="false" />
         <!-- 指定哪个对象的方法触发一次延迟加载。（用逗号分隔的方法列表）默认触发方法有：equals,clone,hashCode,toString -->
         <setting name="lazyLoadTriggerMethods" value="clone" />
+        
+        <!-- 开启缓存 -->
+        <!-- 全局地开启或关闭配置文件中的所有映射器已经配置的任何缓存。默认值：true -->
+        <setting name="cacheEnabled" value="true" />
     </settings>
 
 
@@ -42,6 +46,35 @@
         -->
         <package name="com.cyx.mybatis.domain" />
     </typeAliases>
+
+
+    <!-- 注册拦截器（插件） -->
+    <plugins>
+        <plugin interceptor="com.cyx.mybatis._16_plugin.CustomizedInterceptor" />
+        <plugin interceptor="com.cyx.mybatis._16_plugin.Key4MapInterceptor">
+            <!-- 自定义配置参数 -->
+            <!-- 若列名以此属性值开头，则消除 -->
+            <property name="prefix" value="u_" />
+        </plugin>
+
+        <!-- PageHelper 分页插件 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!-- 配置 helperDialect 属性来指定分页插件使用哪种方言。 -->
+            <property name="helperDialect" value="mysql" />
+            <!--
+                pageSizeZero 属性：
+                    默认值为 false，当该参数设置为 true 时，如果 pageSize=0 或者 RowBounds.limit = 0 就会查询出全部的结果
+                    （相当于没有执行分页查询，但是返回结果仍然是 Page 类型）。
+            -->
+            <property name="pageSizeZero" value="true" />
+            <!--
+                reasonable 属性：
+                    分页合理化参数，默认值为false。当该参数设置为 true 时，pageNum<=0 时会查询第一页，
+                    pageNum>pages（超过总数时），会查询最后一页。默认false 时，直接根据参数进行查询。
+            -->
+            <property name="reasonable" value="true" />
+        </plugin>
+    </plugins>
 
 
     <!-- 环境配置（可以配置多环境，然后根据需求来选择相应的环境配置） -->
@@ -79,6 +112,10 @@
         <mapper resource="com/cyx/mybatis/_10_one2many/One2ManyMapper.xml" />
         <mapper resource="com/cyx/mybatis/_11_lazy_load/LazyLoadMapper.xml" />
         <mapper resource="com/cyx/mybatis/_12_level1_cache/Level1CacheMapper.xml" />
+        <mapper resource="com/cyx/mybatis/_13_level2_cache/Level2CacheMapper.xml" />
+        <mapper resource="com/cyx/mybatis/_14_ehcache/EhCacheMapper.xml" />
+        <mapper resource="com/cyx/mybatis/_16_plugin/PluginMapper.xml" />
+        <mapper resource="com/cyx/mybatis/_17_page_helper/PageHelperMapper.xml" />
     </mappers>
 
 </configuration>

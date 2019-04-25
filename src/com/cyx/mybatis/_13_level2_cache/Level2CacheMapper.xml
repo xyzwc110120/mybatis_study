@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cyx.mybatis._13_level2_cache.Level2CacheMapper">
+
+    <!-- 使用 cache 元素来启用该映射文件的二级缓存 -->
+    <!--
+        cache 元素：
+            映射语句文件中的所有 select 语句的结果将会被缓存。
+            映射语句文件中的所有 insert、update 和 delete 语句会刷新缓存。
+            缓存会使用最近最少使用算法（LRU, Least Recently Used）算法来清除不需要的缓存。
+            缓存不会定时进行刷新（也就是说，没有刷新间隔）。
+            缓存会保存列表或对象（无论查询方法返回哪种）的 1024 个引用。
+            缓存会被视为读 / 写缓存，这意味着获取到的对象并不是共享的，可以安全地被调用者修改，而不干扰其他调用者或线程所做的潜在修改。
+
+            eviction 属性：
+                缓存回收策略：
+                    LRU：最近最少使用：移除最长时间不被使用的对象（默认策略）；
+                    FIFO：先进先出：按对象进入缓存的顺序来移除它们；
+                    SOFT：软引用：基于垃圾回收器状态和软引用规则移除对象。
+                    WEAK：弱引用：更积极地基于垃圾收集器状态和弱引用规则移除对象。
+            flushInterval 属性：
+                刷新间隔，属性可以被设置为任意的正整数，设置的值应该是一个以毫秒为单位的合理时间量。
+                默认情况是不设置，也就是没有刷新间隔，缓存仅仅会在调用语句时刷新。
+            size 属性：
+                引用数目，属性可以被设置为任意正整数，要注意欲缓存对象的大小和运行环境中可用的内存资源。默认值是 1024。
+            readOnly 属性：
+                只读，属性可以被设置为 true 或 false。只读的缓存会给所有调用者返回缓存对象的相同实例。
+                 因此这些对象不能被修改。这就提供了可观的性能提升。而可读写的缓存会（通过序列化）返回缓存对象的拷贝。
+                 速度上会慢一些，但是更安全，因此默认值是 false。
+
+            注意：二级缓存是事务性的。这意味着，当 SqlSession 完成并提交时，或是完成并回滚，
+                但没有执行 flushCache=true 的 insert / delete / update 语句时，缓存会获得更新。
+    -->
+    <cache />
+
+    <select id="getMemberById" resultType="member">
+        SELECT id, account, password, balance FROM member WHERE id = #{id}
+    </select>
+
+    <!--
+        useCache 属性：
+            将其设置为 true 后，将会导致本条语句的结果被二级缓存缓存起来，默认值：对 select 元素为 true。
+    -->
+    <select id="getMemberList" resultType="member" useCache="false">
+        SELECT id, account, password, balance FROM member
+    </select>
+
+    <!--
+        flushCache 属性：
+            将其设置为 true 后，只要语句被调用，都会导致本地缓存和二级缓存被清空。
+            在 select 元素中默认值：false；
+            在 insert、update 和 delete 元素中，默认值：true。
+    -->
+    <insert id="insertMember" flushCache="false">
+        INSERT INTO member (id, account, password, balance, create_time)
+        VALUES (#{id}, #{account}, #{password}, #{balance}, NOW())
+    </insert>
+
+</mapper>

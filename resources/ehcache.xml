@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
+
+    <!-- 指定缓存在磁盘中的存储位置 -->
+    <diskStore path="com/cyx/mybatis/_14_ehcache" />
+
+    <!-- 默认的 cache 配置，相当于是公共的，如果没有设置使用哪一个缓存区域，就使用该默认的区域 -->
+    <!--
+    以下属性是必须的：
+        maxElementsInMemory 属性：该缓存池放在内存中最大的缓存对象个数；
+        maxElementsOnDisk 属性：在磁盘上缓存的对象的最大数目，若是0表示无穷大；
+        eternal 属性：设定缓存的对象是否永远不过期。如果为 true，则缓存的数据始终有效，
+                    如果为 false 那么还要根据 timeToIdleSeconds、timeToLiveSeconds 判断；
+        timeToIdleSeconds 属性：缓存对象最大空闲时间，当缓存池中的对象多长时间没有使用，就清除，单位：秒。
+                                默认值是 0，也就是可闲置时间无穷大；
+
+        overflowToDisk 属性：当内存中对象查过最大值，是否临时保存到磁盘；
+
+    以下属性是可选的：
+        timeToLiveSeconds 属性：缓存对象最大生存时间，缓存池中的对象不管有没有使用，达到该时间便清除。单位：秒。
+                                默认是 0，也就是存活时间无穷大；
+        maxElementsOnDisk 属性：在磁盘上缓存的对象的最大数目，若是 0 表示无穷大 ；
+        diskExpiryThreadIntervalSeconds 属性：磁盘缓存的清理线程运行间隔，默认是 120 秒。
+                                            每隔 120s，相应的线程会进行一次EhCache中数据的清理工作；
+        memoryStoreEvictionPolicy 属性：当达到 maxElementsInMemory 限制时，EhCache 将会根据指定的策略去清理内存。
+                                        默认策略是 LRU（最近最少使用），可以设置为 FIFO（先进先出）或 LFU（最少使用）。
+        diskSpoolBufferSizeMB 属性：设置 DiskStore（磁盘缓存）的缓存区大小。默认是 30MB。每个缓存池都应该有自己的一个缓冲区；
+        diskPersistent 属性：在 JVM 重启的时候是否启用磁盘保存 EhCache 中的数据，默认是false；
+    -->
+    <defaultCache maxElementsInMemory="10000"
+                  maxElementsOnDisk="20000"
+                  timeToIdleSeconds="3"
+                  timeToLiveSeconds="10"
+                  overflowToDisk="true" />
+
+    <!-- 自定义区域的 cache -->
+    <!--
+        name 属性：对应哪一个 namespace 的 Mapper 映射文件。
+    -->
+    <cache name="com.cyx.mybatis._14_ehcache.EhCacheMapper"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="20000"
+           timeToIdleSeconds="3"
+           timeToLiveSeconds="10"
+           overflowToDisk="true"
+    />
+</ehcache>

@@ -70,6 +70,9 @@
         <Logger name="com.cyx.mybatis._09_many2one" level="debug" />
         <Logger name="com.cyx.mybatis._11_lazy_load" level="debug" />
         <Logger name="com.cyx.mybatis._12_level1_cache" level="debug" />
+        <Logger name="com.cyx.mybatis._13_level2_cache" level="debug" />
+        <Logger name="com.cyx.mybatis._14_ehcache" level="debug" />
+        <Logger name="com.cyx.mybatis._17_page_helper" level="debug" />
     </Loggers>
 
 </Configuration>
