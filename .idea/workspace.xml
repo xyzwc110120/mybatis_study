@@ -2,41 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b543f1e-fa22-42a8-b9dc-5d0c90096101" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/ehcache-2.10.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jsqlparser-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/log4j-slf4j-impl-2.11.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mybatis-ehcache-1.1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mybatis-generator-core-1.3.7.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pagehelper-5.1.8.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/slf4j-api-1.7.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/ehcache.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/generatorConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_13_level2_cache/Level2CacheMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_13_level2_cache/Level2CacheMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_13_level2_cache/Level2CacheMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_14_ehcache/EhCacheMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_14_ehcache/EhCacheMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_14_ehcache/EhCacheMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_15_mybatis_generator/MybatisGeneratorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_16_plugin/CustomizedInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_16_plugin/Key4MapInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_16_plugin/PluginMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_16_plugin/PluginMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_16_plugin/PluginTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_17_page_helper/PageHelperMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_17_page_helper/PageHelperMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_17_page_helper/PageHelperMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/domain/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7d8ed7cf-9130-4592-8499-dac440555ee7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7d8ed7cf-9130-4592-8499-dac440555ee7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mybatis_study/com/cyx/mybatis/_02_logging_framework/test.log" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mybatis_study/com/cyx/mybatis/_02_logging_framework/test.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mybatis_study/com/cyx/mybatis/domain/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mybatis_study/com/cyx/mybatis/domain/Member.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mybatis_study/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mybatis_study/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mybatis_study/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mybatis_study/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/cyx/mybatis/_14_ehcache/.ehcache-diskstore.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/cyx/mybatis/_14_ehcache/com%002ecyx%002emybatis%002e_14_ehcache%002e%0045h%0043ache%004dapper.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/ehcache.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/ehcache.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/cyx/mybatis/_02_logging_framework/test.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/_02_logging_framework/test.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cyx/mybatis/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cyx/mybatis/domain/Member.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,17 +69,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/mybatis-config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1575">
+            <state relative-caret-position="319">
               <caret line="75" column="17" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_17_page_helper/PageHelperMapper.xml">
+        <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_15_mybatis_generator/MybatisGeneratorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+            <state relative-caret-position="368">
+              <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -179,7 +152,6 @@
         <option value="$PROJECT_DIR$/src/com/cyx/mybatis/_13_level2_cache/Level2CacheMapperTest.java" />
         <option value="$PROJECT_DIR$/resources/ehcache.fxml" />
         <option value="$PROJECT_DIR$/src/com/cyx/mybatis/_14_ehcache/EhCacheMapper.fxml" />
-        <option value="$PROJECT_DIR$/resources/ehcache.xml" />
         <option value="$PROJECT_DIR$/src/com/cyx/mybatis/_14_ehcache/EhCacheMapper.java" />
         <option value="$PROJECT_DIR$/src/com/cyx/mybatis/_14_ehcache/EhCacheMapper.xml" />
         <option value="$PROJECT_DIR$/src/com/cyx/mybatis/_14_ehcache/EhCacheMapperTest.java" />
@@ -202,6 +174,7 @@
         <option value="$PROJECT_DIR$/src/com/cyx/mybatis/_17_page_helper/PageHelperMapper.java" />
         <option value="$PROJECT_DIR$/src/com/cyx/mybatis/_17_page_helper/PageHelperMapperTest.java" />
         <option value="$PROJECT_DIR$/src/com/cyx/mybatis/_17_page_helper/PageHelperMapper.xml" />
+        <option value="$PROJECT_DIR$/resources/ehcache.xml" />
       </list>
     </option>
   </component>
@@ -211,8 +184,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="y" value="20" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-2" />
+    <option name="y" value="256" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -235,11 +209,6 @@
             <path>
               <item name="mybatis_study" type="b2602c69:ProjectViewProjectNode" />
               <item name="mybatis_study" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mybatis_study" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mybatis_study" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -253,14 +222,14 @@
               <item name="mybatis_study" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="_15_mybatis_generator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mybatis_study" type="b2602c69:ProjectViewProjectNode" />
               <item name="mybatis_study" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-              <item name="_17_page_helper" type="462c0819:PsiDirectoryNode" />
+              <item name="_16_plugin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -282,7 +251,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -304,7 +273,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PageHelperMapperTest.testGetMemberList">
+  <component name="RunManager" selected="JUnit.PluginTest.testGetUUserList">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -429,10 +398,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PluginTest.testGetUUserList" />
         <item itemvalue="JUnit.PageHelperMapperTest.testGetMemberList" />
         <item itemvalue="JUnit.PageHelperMapperTest.testGetMemberList2" />
         <item itemvalue="JUnit.PageHelperMapperTest.testGetMemberList1" />
-        <item itemvalue="JUnit.PluginTest.testGetUUserList" />
         <item itemvalue="JUnit.PluginTest.testString" />
       </list>
     </recent_temporary>
@@ -471,7 +440,11 @@
       <workItem from="1555944453033" duration="4739000" />
       <workItem from="1555999098509" duration="15567000" />
       <workItem from="1556091228813" duration="5943000" />
-      <workItem from="1556158747856" duration="448000" />
+      <workItem from="1556158747856" duration="522000" />
+      <workItem from="1556195580743" duration="111000" />
+      <workItem from="1556196331046" duration="457000" />
+      <workItem from="1556198879403" duration="140000" />
+      <workItem from="1556257658936" duration="433000" />
     </task>
     <task id="LOCAL-00001" summary="新增笔记">
       <created>1555658988238</created>
@@ -484,9 +457,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PluginTest_testGetUUserList - 2019.04.24 at 03h 58m 02s.xml">
-      <configuration name="PluginTest.testGetUUserList" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="PluginTest_testGetUUserList - 2019.04.24 at 04h 01m 22s.xml">
       <configuration name="PluginTest.testGetUUserList" configurationId="JUnit" />
     </history-entry>
@@ -514,14 +484,17 @@
     <history-entry file="PageHelperMapperTest_testGetMemberList - 2019.04.24 at 17h 19m 47s.xml">
       <configuration name="PageHelperMapperTest.testGetMemberList" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PluginTest_testGetUUserList - 2019.04.26 at 13h 48m 21s.xml">
+      <configuration name="PluginTest.testGetUUserList" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162753000" />
+    <option name="totallyTimeSpent" value="163968000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989154" visible="true" weight="0.18017058" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989154" visible="true" weight="0.18763326" />
       <window_info id="Structure" order="1" sideWeight="0.5010846" side_tool="true" weight="0.18550107" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -606,12 +579,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_12_level1_cache/Level1CacheMapper.xml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="11" selection-end-column="9" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_12_level1_cache/Level1CacheMapperTest.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -642,12 +615,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_13_level2_cache/Level2CacheMapper.xml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="5" selection-end-column="71" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_13_level2_cache/Level2CacheMapper.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -675,14 +648,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/ehcache.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/db.properties">
       <provider selected="true" editor-type-id="text-editor">
@@ -815,16 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_15_mybatis_generator/MybatisGeneratorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_14_ehcache/EhCacheMapperTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -847,21 +802,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="36" column="26" lean-forward="true" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_14_ehcache/EhCacheMapper.xml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="3" selection-end-column="54" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/domain/TUser.java" />
     <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_16_plugin/PluginMapper.java">
@@ -874,37 +821,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_16_plugin/Key4MapInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#723#724#0" expanded="true" />
-            <element signature="e#767#768#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_16_plugin/PluginTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" selection-start-line="7" selection-end-line="17" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_16_plugin/PluginMapper.xml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="3" selection-end-column="54" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="das://7d8ed7cf-9130-4592-8499-dac440555ee7/schema/demo/table/student">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -946,29 +869,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/generatorConfig.xml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="36" column="26" lean-forward="true" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/log4j2.xml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1554">
           <caret line="74" column="53" selection-start-line="74" selection-start-column="53" selection-end-line="74" selection-end-column="53" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/mybatis-config.xml">
+    <entry file="file://$PROJECT_DIR$/resources/ehcache.xml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="75" column="17" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="17" />
+        <state relative-caret-position="-332">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_17_page_helper/PageHelperMapper.xml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_16_plugin/PluginTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_16_plugin/Key4MapInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-567">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/mybatis-config.xml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="75" column="17" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cyx/mybatis/_15_mybatis_generator/MybatisGeneratorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

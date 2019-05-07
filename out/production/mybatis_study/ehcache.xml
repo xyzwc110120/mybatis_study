@@ -3,7 +3,7 @@
          xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
 
     <!-- 指定缓存在磁盘中的存储位置 -->
-    <diskStore path="com/cyx/mybatis/_14_ehcache" />
+    <diskStore path="src/com/cyx/mybatis/_14_ehcache" />
 
     <!-- 默认的 cache 配置，相当于是公共的，如果没有设置使用哪一个缓存区域，就使用该默认的区域 -->
     <!--
